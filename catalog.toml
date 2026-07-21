@@ -1,0 +1,11 @@
+[[plugin]]
+id = "antik/kde-connect"
+name = "KDE Connect"
+version = "2.1.1"
+author = "antik"
+license = "GPL-2.0"
+icon = "device-mobile"
+description = "Integrates your mobile devices into a panel using KDE Connect: battery, network, notifications, pairing, ring, ping, file sharing and browsing."
+plugin_api = 3
+tags = ["Bar", "Panel", "Utility", "System"]
+dependencies = ["kdeconnect (kdeconnectd running)", "systemd (busctl)", "sshfs (optional, browse files)"]
