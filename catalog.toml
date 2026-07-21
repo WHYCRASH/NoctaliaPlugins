@@ -1,5 +1,5 @@
 [[plugin]]
-id = "antik/kde-connect"
+id = "antik/kde-connect"   
 name = "KDE Connect"
 version = "2.1.1"
 author = "antik"
