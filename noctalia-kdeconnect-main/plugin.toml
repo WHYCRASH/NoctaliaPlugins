@@ -1,0 +1,97 @@
+# KDE Connect integration for Noctalia v5.
+# Port of the legacy v4 QML plugin by WerWolv (GPLv2) to the Luau plugin system.
+#
+# Entries:
+#   * service  — polls kdeconnectd over D-Bus (busctl) and publishes a snapshot
+#   * widget   — bar pill: state glyph + battery % of the main device
+#   * shortcut — control-center tile
+#   * panel    — device panel: stats, pairing, and actions
+
+id           = "antik/kde-connect"
+name         = "KDE Connect"
+version      = "2.1.1"
+plugin_api   = 3
+min_noctalia = "5.0.0"
+author       = "antik"
+license      = "GPL-2.0"
+icon         = "device-mobile"
+description  = "Integrates your mobile devices into a panel using KDE Connect: battery, network, notifications, pairing, ring, ping, file sharing and browsing."
+tags         = ["Bar", "Panel", "Utility", "System"]
+dependencies = ["kdeconnect (kdeconnectd running)", "systemd (busctl)", "sshfs (optional, browse files)"]
+
+# ── Plugin-level settings (shared by service / widget / panel) ────────────────
+
+[[setting]]
+key             = "poll_interval"
+type            = "int"
+label_key       = "settings.poll_interval.label"
+description_key = "settings.poll_interval.description"
+default         = 5
+min             = 2
+max             = 60
+
+# ── Background service: talks to kdeconnectd, feeds the UI entries ───────────
+
+[[service]]
+id    = "monitor"
+entry = "service.luau"
+
+# ── Bar widget ────────────────────────────────────────────────────────────────
+
+[[widget]]
+id    = "kdeconnect"
+entry = "widget.luau"
+
+  [[widget.setting]]
+  key             = "hide_if_no_device"
+  type            = "bool"
+  label_key       = "settings.hide_if_no_device.label"
+  description_key = "settings.hide_if_no_device.description"
+  default         = false
+
+  [[widget.setting]]
+  key             = "right_click_action"
+  type            = "select"
+  label_key       = "settings.right_click_action.label"
+  description_key = "settings.right_click_action.description"
+  default         = "none"
+  options = [
+    { value = "none",      label_key = "settings.click_action_options.none" },
+    { value = "panel",     label_key = "settings.click_action_options.panel" },
+    { value = "ring",      label_key = "settings.click_action_options.ring" },
+    { value = "ping",      label_key = "settings.click_action_options.ping" },
+    { value = "clipboard", label_key = "settings.click_action_options.clipboard" },
+    { value = "refresh",   label_key = "settings.click_action_options.refresh" },
+  ]
+
+  [[widget.setting]]
+  key             = "middle_click_action"
+  type            = "select"
+  label_key       = "settings.middle_click_action.label"
+  description_key = "settings.middle_click_action.description"
+  default         = "none"
+  options = [
+    { value = "none",      label_key = "settings.click_action_options.none" },
+    { value = "panel",     label_key = "settings.click_action_options.panel" },
+    { value = "ring",      label_key = "settings.click_action_options.ring" },
+    { value = "ping",      label_key = "settings.click_action_options.ping" },
+    { value = "clipboard", label_key = "settings.click_action_options.clipboard" },
+    { value = "refresh",   label_key = "settings.click_action_options.refresh" },
+  ]
+
+# ── Control-center tile ───────────────────────────────────────────────────────
+
+[[shortcut]]
+id    = "tile"
+entry = "shortcut.luau"
+
+# ── Device panel ──────────────────────────────────────────────────────────────
+
+[[panel]]
+id              = "panel"
+entry           = "panel.luau"
+width           = 440
+height          = 520
+placement       = "attached"
+position        = "auto"
+open_near_click = true

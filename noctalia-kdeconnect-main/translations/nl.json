@@ -1,0 +1,85 @@
+{
+  "bar": {
+    "tooltip": "Verbonden apparaten",
+    "notifications": {
+      "one": "{count} melding",
+      "other": "{count} meldingen"
+    }
+  },
+  "state": {
+    "connected": "Verbonden",
+    "disconnected": "Niet verbonden",
+    "unavailable": "Niet beschikbaar",
+    "no_device": "Geen apparaat",
+    "not_paired": "Niet gekoppeld"
+  },
+  "panel": {
+    "title": "Verbonden apparaten",
+    "battery": "Batterij",
+    "network": "Netwerk",
+    "signal_strength": "Signaalsterkte",
+    "notifications": "Meldingen",
+    "unknown": "Onbekend",
+    "signal": {
+      "0": "Zeer zwak",
+      "1": "Zwak",
+      "2": "Redelijk",
+      "3": "Goed",
+      "4": "Uitstekend"
+    },
+    "actions": {
+      "ring": "Zoek apparaat",
+      "ping": "Ping",
+      "clipboard": "Klembord versturen",
+      "wake": "Wakker maken",
+      "browse": "Bestanden bekijken",
+      "share": "Bestand versturen"
+    },
+    "share_placeholder": "~/pad/naar/bestand",
+    "share_not_found": "Bestand niet gevonden: {path}",
+    "share_sent": "{path} verstuurd",
+    "share_sent_multi": "{count} bestanden verstuurd",
+    "clipboard_empty": "Klembord is leeg",
+    "clipboard_sent": "Klembord naar apparaat verstuurd",
+    "clipboard_too_large": "Klembord is te groot om te versturen",
+    "browse_failed": "Kon het apparaat niet via SFTP koppelen (is sshfs geïnstalleerd?)",
+    "pair": "Koppelen met apparaat",
+    "pair_requested": "Bevestig het koppelverzoek op je apparaat",
+    "unpair": "Ontkoppelen",
+    "device_unavailable": "Apparaat is momenteel niet beschikbaar"
+  },
+  "errors": {
+    "no_devices": "Geen apparaat met KDE Connect gevonden",
+    "no_devices_hint": "Open de KDE Connect-app op je telefoon en zorg dat beide apparaten op hetzelfde netwerk zitten, druk daarna op vernieuwen.",
+    "daemon_title": "kdeconnectd lijkt niet te draaien!",
+    "daemon_desc": "Zorg dat de KDE Connect-applicatie is geïnstalleerd en dat de kdeconnectd-daemon is gestart.",
+    "busctl_title": "busctl is niet gevonden!",
+    "busctl_desc": "Zorg dat busctl (onderdeel van systemd) op je systeem is geïnstalleerd."
+  },
+  "settings": {
+    "poll_interval": {
+      "label": "Peilinterval (seconden)",
+      "description": "Hoe vaak de KDE Connect-daemon wordt bevraagd voor apparaatstatus."
+    },
+    "hide_if_no_device": {
+      "label": "Verbergen indien niet beschikbaar",
+      "description": "Verberg de balkwidget volledig wanneer geen apparaat bereikbaar is."
+    },
+    "right_click_action": {
+      "label": "Actie bij rechtsklik",
+      "description": "Actie die wordt uitgevoerd bij een rechtsklik op de balkwidget."
+    },
+    "middle_click_action": {
+      "label": "Actie bij middelklik",
+      "description": "Actie die wordt uitgevoerd bij een middelklik op de balkwidget."
+    },
+    "click_action_options": {
+      "none": "Geen",
+      "panel": "Paneel openen",
+      "ring": "Apparaat zoeken (rinkelen)",
+      "ping": "Ping",
+      "clipboard": "Klembord versturen",
+      "refresh": "Apparaten vernieuwen"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "bar": {
+    "tooltip": "Connected Devices",
+    "notifications": {
+      "one": "{count} notification",
+      "other": "{count} notifications"
+    }
+  },
+  "state": {
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "unavailable": "Unavailable",
+    "no_device": "No device",
+    "not_paired": "Not paired"
+  },
+  "panel": {
+    "title": "Connected Devices",
+    "battery": "Battery",
+    "network": "Network",
+    "signal_strength": "Signal Strength",
+    "notifications": "Notifications",
+    "unknown": "Unknown",
+    "signal": {
+      "0": "Very Weak",
+      "1": "Weak",
+      "2": "Fair",
+      "3": "Good",
+      "4": "Excellent"
+    },
+    "actions": {
+      "ring": "Find device",
+      "ping": "Ping",
+      "clipboard": "Send clipboard",
+      "wake": "Wake up",
+      "browse": "Browse files",
+      "share": "Send a file"
+    },
+    "share_placeholder": "~/path/to/file",
+    "share_not_found": "File not found: {path}",
+    "share_sent": "Sent {path}",
+    "share_sent_multi": "Sent {count} files",
+    "clipboard_empty": "Clipboard is empty",
+    "clipboard_sent": "Clipboard sent to device",
+    "clipboard_too_large": "Clipboard is too large to send",
+    "browse_failed": "Could not mount the device over SFTP (is sshfs installed?)",
+    "pair": "Pair with device",
+    "pair_requested": "Confirm the pairing request on your device",
+    "unpair": "Unpair",
+    "device_unavailable": "Device is currently unavailable"
+  },
+  "errors": {
+    "no_devices": "No device running KDE Connect found",
+    "no_devices_hint": "Open the KDE Connect app on your phone and make sure both devices are on the same network, then press refresh.",
+    "daemon_title": "kdeconnectd does not seem to be running!",
+    "daemon_desc": "Make sure the KDE Connect application is installed and the kdeconnectd daemon has been started.",
+    "busctl_title": "busctl cannot be found!",
+    "busctl_desc": "Make sure busctl (part of systemd) is installed on your system."
+  },
+  "settings": {
+    "poll_interval": {
+      "label": "Poll interval (seconds)",
+      "description": "How often the KDE Connect daemon is polled for device status."
+    },
+    "hide_if_no_device": {
+      "label": "Hide if unavailable",
+      "description": "Hide the bar widget entirely when no device is reachable."
+    },
+    "right_click_action": {
+      "label": "Right-click action",
+      "description": "Action fired by a right click on the bar widget."
+    },
+    "middle_click_action": {
+      "label": "Middle-click action",
+      "description": "Action fired by a middle click on the bar widget."
+    },
+    "click_action_options": {
+      "none": "None",
+      "panel": "Open panel",
+      "ring": "Find device (ring)",
+      "ping": "Ping",
+      "clipboard": "Send clipboard",
+      "refresh": "Refresh devices"
+    }
+  }
+}
